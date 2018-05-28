@@ -5,11 +5,14 @@ var fs = require('fs');
 var server = http.createServer(function(request, response){
     var parseURL = url.parse(request.url);
     var resource = parseURL.pathname;
-    resource = resource.split('/')[1];
+    resource = resource.substr(1);
 
-    // 1. 요청된 자원이 /hello 이면
-    // if(resource == '/hello.html'){
-        // 2. hello.html 파일을 읽은 후
+    if(resource === '') resource = 'index.html';
+
+
+    // 1. 요청된 자원이 있으면
+    // if(resource){
+        // 2. 파일을 읽은 후
         fs.readFile(resource, 'utf-8', function(error, data){
             // 2.1 읽으면서 여류가 발생하면 오류의 내용을
             if(error){
