@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template Test</title>
+    <link rel="import" href="import.html">
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+
+        // import에서 <template>를 복제합니다.
+        var template = link.import.querySelector('template');
+        var clone = document.importNode(template.content, true);
+
+        document.querySelector('#container').appendChild(clone);
+    </script>
+    
+</body>
+</html>
