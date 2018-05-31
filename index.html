@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Template Test</title>
-    <link rel="import" href="import.html">
+    <title>Template Include</title>
 </head>
 <body>
-    <div id="container"></div>
+
+    <div data-include='header'></div>
+    <div data-include='container'></div>
+    <div data-include='footer'></div>
+
     <script>
-        var link = document.querySelector('link[rel="import"]');
-
-        // import에서 <template>를 복제합니다.
-        var template = link.import.querySelector('template');
-        var clone = document.importNode(template.content, true);
-
-        document.querySelector('#container').appendChild(clone);
+        /* Template Include */
+        var insertTempate = function(node, link){
+            link.addEventListener('load', function(){
+                var tp = this.import.querySelector('template');
+                var clone = document.importNode(tp.content, true);
+                node.appendChild(clone);
+                node.outerHTML = node.innerHTML;
+            }, false)
+        };
+        
+        /* link import 생성 및 추가 */
+        var includes = document.querySelectorAll('[data-include]');
+        for(var i=0 ; i<includes.length ; i++){
+            var node = includes[i];
+            var link = document.createElement('link'); 
+            link.rel = 'import';
+            link.href = node.dataset.include +'.html';            
+            document.head.appendChild(link);
+            insertTempate(node, link);
+        }
     </script>
     
 </body>
