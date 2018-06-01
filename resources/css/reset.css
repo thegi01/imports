@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* Reset */
+body {
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-text-size-adjust: none;
+  background-color: #fff;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+img, fieldset, button, input {
+  border: 0 none;
+}
+
+img, input, select, textarea {
+  vertical-align: middle;
+}
+
+address, em {
+  font-style: normal;
+}
+
+input:focus {
+  /*outline: 0*/
+}
+
+input {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="submit"],
+input[type="select"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:checked[type="checkbox"] {
+  /*-webkit-appearance: checkbox*/
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+hr {
+  clear: both;
+  height: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+/* margin */
+html, body, p, div, span, blockquote, pre, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, th, td, form, fieldset, legend, input, textarea, button, select, section, article, header, footer, main, nav, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* font */
+body, input, select, textarea, button,
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림";
+}
+
+html {
+  font-size: 16px;
+}
+
