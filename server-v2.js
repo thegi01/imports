@@ -1,6 +1,7 @@
 var http = require('http');
-var url = require('url');
+var querystring = require('querystirng');
 var fs = require('fs');
+var url = require('url');
 
 var server = http.createServer(function(request, response){
     var parseURL = url.parse(request.url);
@@ -33,3 +34,7 @@ var server = http.createServer(function(request, response){
 server.listen(80, function(){
     console.log('Server is running...');
 });
+
+
+// 참조중
+// https://stackoverflow.com/questions/18006730/node-js-resource-interpreted-as-script-but-transferred-with-mime-type-text-pla
