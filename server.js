@@ -33,3 +33,5 @@ var server = http.createServer(function(request, response){
 server.listen(80, function(){
     console.log('Server is running...');
 });
+
+// https://teamtreehouse.com/community/cant-get-the-css-to-load-in-the-nodejs-server
