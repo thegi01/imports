@@ -6,12 +6,10 @@ var server = http.createServer(function(request, response){
     var parseURL = url.parse(request.url);
     var pathName = parseURL.pathname;
     pathName = pathName.substr(1);
-
+    
     if(pathName === '') pathName = 'index.html';
 
-    var tmp = pathName.lastIndexOf('.');
-    var extension = pathName.substring((tmp+1));
-
+    var extension = pathName.substring((pathName.lastIndexOf('.')+1));
 
     // 1. 요청된 자원이 있으면
     // if(pathName){
@@ -41,6 +39,3 @@ server.listen(80, function(){
     console.log('Server is running...');
 });
 
-
-// 참조중
-// https://stackoverflow.com/questions/18006730/node-js-resource-interpreted-as-script-but-transferred-with-mime-type-text-pla

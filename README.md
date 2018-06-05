@@ -2,6 +2,7 @@
 
 ## 참조 사이트
     https://www.html5rocks.com/ko/tutorials/webcomponents/imports/
+    https://stackoverflow.com/questions/18006730/node-js-resource-interpreted-as-script-but-transferred-with-mime-type-text-pla
 
 
 ## w3.org
